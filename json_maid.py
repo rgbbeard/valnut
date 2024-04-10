@@ -10,10 +10,7 @@ class JSONMaid():
 	__storage: str = ""
 
 	def __init__(self, filename: str = "passwords.json"):
-		foldername: str = ""
-
-		if not matches(r"\/|\\", filename):
-			foldername = get_path(filename)
+		foldername: str = "/opt/valnut"
 
 		if ".json" in filename:
 			self.__storage = f"{foldername}/{filename}"
@@ -22,7 +19,7 @@ class JSONMaid():
 				data = data.read()
 				self.__data = self.__from_json(data)
 
-				if self.__data["data"] != dict:
+				if not isinstance(self.__data["data"], dict):
 					self.__data["data"] = dict()
 
 	def __del__(self):

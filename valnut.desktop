@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=ValNut
+Comment="Graphical password manager"
+Exec=sh -c "python /opt/valnut/main.py"
+Terminal=true
+Type=Application
+Icon=emblem-generic
+StartupNotify=true
